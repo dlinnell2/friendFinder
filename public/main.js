@@ -62,9 +62,8 @@ $(document).ready(function(){
     }
 
     $('.close').on('click', function(){
-        /* $('.chosen')[0].reset();
-        $('.form-control')[0].reset(); */
-        console.log('working');
+        $('.chosen').empty();
+        $('.form-control').val('');
     });
-    
+
 });
