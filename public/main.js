@@ -1,14 +1,10 @@
-/* $(document).ready(function(){
+$(document).ready(function(){
 
-    $('#goToSurvey').on('click', function(){
+    $('.submit').on('click', function(){
+
         event.preventDefault();
-
-        console.log('clicked');
-
-        $.get('/survey', function(data){
-
-            console.log('to survey')
-            console.log(data);
-        });
+        
+        var data = $('#q1').val();
+        console.log(data);
     });
-}); */
+});
