@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -56,7 +56,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 2</h4>
         <h5>Dogs are superior to cats</h5>
@@ -68,7 +69,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 3</h4>
         <h5>You would do anything for love, but you won't do that</h5>
@@ -80,7 +82,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 4</h4>
         <h5>Cats are inherently deceitful animals</h5>
@@ -92,7 +95,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 5</h4>
         <h5>Cheap Trick is an underrated band</h5>
@@ -104,7 +108,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 6</h4>
         <h5>You find personal meaning in vaguely worded sentences</h5>
@@ -116,7 +121,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 7</h4>
         <h5>Prince is overrated</h5>
@@ -128,7 +134,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 8</h4>
         <h5>You would rather fight one horse sized duck than 100 duck sized horses</h5>
@@ -140,7 +147,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 9</h4>
         <h5>We have yet to find Bigfoot, but is out there. Watching. ...waiting.</h5>
@@ -152,7 +160,8 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <h4>Question 10</h4>
         <h5>One is the loneliest number</h5>
@@ -164,11 +173,46 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        <br><br>
+        <br>
+        <br>
 
         <button type="button" class="btn btn-primary submit">Take the Survey!</button>
 
     </div>
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="resultModal" role="dialog">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h4 class="modal-title">Best Match</h5>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <h5 id = "modalTitle"></h5>
+                    <img id = "modalImage">
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>

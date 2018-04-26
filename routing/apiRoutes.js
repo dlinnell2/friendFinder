@@ -32,9 +32,10 @@ module.exports = function (app) {
         };
 
         var matchValue = evaluatedTotal[0].total;
-        var closestMatch;
+        var closestMatch = evaluatedTotal[0];
 
         for (match of evaluatedTotal){
+            
             if (parseInt(match.total) < parseInt(matchValue)){
                 matchValue = match.total;
                 closestMatch = match;

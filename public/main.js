@@ -28,7 +28,13 @@ $(document).ready(function(){
             };
 
             $.post('/api/friends', user, function(data){
-                console.log(data);
+                if(data){
+
+                    $('#modalTitle').text(data.name);
+                    $('#modalImage').attr('src', data.image);
+                    $('#resultModal').modal('toggle');
+
+                }
             })
 
             
@@ -54,4 +60,11 @@ $(document).ready(function(){
 
         return complete;
     }
+
+    $('.close').on('click', function(){
+        /* $('.chosen')[0].reset();
+        $('.form-control')[0].reset(); */
+        console.log('working');
+    });
+    
 });
