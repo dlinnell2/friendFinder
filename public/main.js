@@ -6,10 +6,12 @@ $(document).ready(function(){
 
         event.preventDefault();
         
+        // Check if all items have been completed
         validate()
         
         if (complete){
 
+            // Create user object to send to server
             var user = {
                 name: $('#userName').val().trim(),
                 image: $('#userPhoto').val().trim(),
@@ -27,6 +29,7 @@ $(document).ready(function(){
                 ]
             };
 
+            // Send to server, send response to client
             $.post('/api/friends', user, function(data){
                 if(data){
 
@@ -61,6 +64,7 @@ $(document).ready(function(){
         return complete;
     }
 
+    // Clear our all values when the user closes modal
     $('.close').on('click', function(){
         $('.chosen').val('');
         $('.form-control').val('');

@@ -7,42 +7,49 @@ module.exports = function (app) {
         return res.json(friendList);
     });
 
+    // Taking users answers and evaluating to find match
     app.post('/api/friends', function (req, res) {
 
         var user = req.body;
 
-        var evaluatedTotal = [];
+        var totals = [];
 
-        for (item of friendList){
+        // Iterate through possible people
+        for (currentPerson of friendList){
 
-            var itemName = item.name;
+            var itemName = currentPerson.name;
 
-            var total = 0;
+            var difference = 0;
 
-            for (answer in item.answers){
-                total += Math.abs(parseInt(item.answers[answer]) - parseInt(user.answers[answer]));
+            // Check the difference between each individual answer
+            for (answer in currentPerson.answers){
+                difference += Math.abs(parseInt(currentPerson.answers[answer]) - parseInt(user.answers[answer]));
             }
 
+            // Create an object with the current person and the total differnce betwen their answers and the users
             var matchTotal = {
-                person: item,
-                total: total
+                person: currentPerson,
+                difference: difference
             };
 
-            evaluatedTotal.push(matchTotal);
+            totals.push(matchTotal);
         };
 
-        var matchValue = evaluatedTotal[0].total;
-        var closestMatch = evaluatedTotal[0];
+        // Chose and initial person
+        var matchValue = totals[0].difference;
+        var closestMatch = totals[0];
 
-        for (match of evaluatedTotal){
-            
-            if (parseInt(match.total) < parseInt(matchValue)){
-                matchValue = match.total;
+        // Iterate over all objects created prior and locate lowest difference
+        for (match of totals){
+
+            if (parseInt(match.difference) < parseInt(matchValue)){
+                matchValue = match.difference;
                 closestMatch = match;
 
             }
         }
 
+        // Send the match back to client
         res.json(closestMatch.person);
 
     });
