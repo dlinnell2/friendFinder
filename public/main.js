@@ -62,7 +62,7 @@ $(document).ready(function(){
     }
 
     $('.close').on('click', function(){
-        $('.chosen').empty();
+        $('.chosen').val('');
         $('.form-control').val('');
     });
 
